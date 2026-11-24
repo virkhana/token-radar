@@ -4,11 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Token Radar: pre-token protocols ranked by implied value</title>
+<meta name="description" content="A radar for protocols that have not launched a token yet: ranked by a value model measured from the snapshot's own TVL, seven-day growth and age, with a farm plan for each.">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<a class="skip" href="#board">Skip to the board</a>
-<main id="board" tabindex="-1" aria-busy="true"></main>
+<a class="skip" href="#main">Skip to the radar</a>
+
+<header class="topbar">
+  <a class="brand" href="#/board">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <circle cx="16" cy="16" r="13"></circle>
+      <circle cx="16" cy="16" r="7"></circle>
+      <circle cx="16" cy="16" r="1.6" class="brand-dot"></circle>
+      <path d="M16 16 L26 8"></path>
+    </svg>
+    <span class="brand-text">
+      <strong>Token Radar</strong>
+      <em>pre-token protocols, priced from the record</em>
+    </span>
+  </a>
+  <nav class="nav" aria-label="Views">
+    <a href="#/board" data-nav="board">Board</a>
+    <a href="#/method" data-nav="method">Model</a>
+    <a href="#/live" data-nav="live">Live tokens</a>
+  </nav>
+  <div class="snapshot" id="snapshot"></div>
+</header>
+
+<main id="main" tabindex="-1" aria-live="polite"></main>
+
+<footer class="foot">
+  <p>Every figure is read from the sealed snapshot; every rank is the model's claim, not an offer. A protocol that records no token has not necessarily announced one.</p>
+  <p class="foot-meta" id="foot-meta"></p>
+</footer>
+
 <script src="../data.js"></script>
 <script src="app.js"></script>
 </body>
